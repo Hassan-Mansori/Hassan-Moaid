@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/15/2024 01:23:00 PM
+// Create Date: 12/15/2024 01:57:53 PM
 // Design Name: 
-// Module Name: instruction_memory
+// Module Name: program_counter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,14 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module instruction_memory #(parameter IMEM_DEPTH = 4)(
-    input logic [IMEM_DEPTH-1 : 0] PC,
-    output logic [7:0] intstruction
-    );
-    
-    logic [7 :0] ints [0:IMEM_DEPTH - 1];
-    
-    initial $readmemb("/home/it/Desktop/Courses/MCA/Hassan-Moaid/CX-204-Lab1/support_files/fib_im.mem", ints);
-    
-    assign intstruction = ints[PC];
+module program_counter #(parameter PROG_VALUE = 3)(
+ output logic [PROG_VALUE -1 :0] PC,
+input logic clk, reset);
+
+always@(posedge clk or negedge reset) begin 
+
+if(~reset)
+PC <= 0;
+else begin
+PC <= PC+1;
+if(PC== 3)
+PC <= 0;
+end
+end
 endmodule

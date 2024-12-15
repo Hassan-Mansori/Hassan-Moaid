@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/15/2024 01:23:00 PM
+// Create Date: 12/15/2024 01:19:36 PM
 // Design Name: 
-// Module Name: instruction_memory
+// Module Name: alu
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,14 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module instruction_memory #(parameter IMEM_DEPTH = 4)(
-    input logic [IMEM_DEPTH-1 : 0] PC,
-    output logic [7:0] intstruction
+module alu #(parameter ALU_WIDTH = 16) ( 
+input logic [ALU_WIDTH -1 : 0] A, B,
+input logic carry, input logic [1:0] sel,
+output logic [ALU_WIDTH -1 : 0] SUM
     );
     
-    logic [7 :0] ints [0:IMEM_DEPTH - 1];
+   always_comb begin
+    case (sel) 
+     
+    2'b00: SUM = A + B; 
+    2'b01: SUM = A - B; 
+    2'b11: SUM = A | B; 
+    2'b10: SUM = A & B; 
     
-    initial $readmemb("/home/it/Desktop/Courses/MCA/Hassan-Moaid/CX-204-Lab1/support_files/fib_im.mem", ints);
     
-    assign intstruction = ints[PC];
+    endcase
+    end
 endmodule

@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/15/2024 01:23:00 PM
+// Create Date: 12/15/2024 03:28:13 PM
 // Design Name: 
-// Module Name: instruction_memory
+// Module Name: tb_top
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,14 +20,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module instruction_memory #(parameter IMEM_DEPTH = 4)(
-    input logic [IMEM_DEPTH-1 : 0] PC,
-    output logic [7:0] intstruction
-    );
-    
-    logic [7 :0] ints [0:IMEM_DEPTH - 1];
-    
-    initial $readmemb("/home/it/Desktop/Courses/MCA/Hassan-Moaid/CX-204-Lab1/support_files/fib_im.mem", ints);
-    
-    assign intstruction = ints[PC];
+module tb_top;
+
+logic clk = 0;
+logic reset;
+logic [15:0] alu_bus;
+
+top DUT( 
+.clk(clk), 
+.reset(reset),
+.alu_bus(alu_bus)
+);
+
+always #5 clk = ~clk;
+initial begin
+reset = 1;
+#10
+reset = 0;
+#10
+reset = 1;
+
+
+
+#500
+$finish; 
+end
 endmodule

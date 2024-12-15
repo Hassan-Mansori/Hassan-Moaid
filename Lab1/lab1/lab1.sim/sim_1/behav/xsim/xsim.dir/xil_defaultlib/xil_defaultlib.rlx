@@ -1,0 +1,13 @@
+0.6
+2019.1
+May 24 2019
+14:51:52
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sim_1/new/tb_alu.sv,1734260096,systemVerilog,,,,tb_alu,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sim_1/new/tb_program_counter.sv,1734263928,systemVerilog,,,,tb_program_counter,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sim_1/new/tb_top.sv,1734266024,systemVerilog,,,,tb_top,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sources_1/new/alu.sv,1734258949,systemVerilog,,/home/it/Desktop/Courses/MCA/Hassan-Moaid/instruction_memory.sv,,alu,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sources_1/new/program_counter.sv,1734264525,systemVerilog,,/home/it/Desktop/Courses/MCA/Hassan-Moaid/register_file.sv,,program_counter,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sources_1/new/top.sv,1734266504,systemVerilog,,/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sim_1/new/tb_top.sv,,top,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/instruction_memory.sv,1734266295,systemVerilog,,/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sources_1/new/program_counter.sv,,instruction_memory,,,,,,,,
+/home/it/Desktop/Courses/MCA/Hassan-Moaid/register_file.sv,1734266815,systemVerilog,,/home/it/Desktop/Courses/MCA/Hassan-Moaid/Lab1/lab1/lab1.srcs/sources_1/new/top.sv,,register_file,,,,,,,,

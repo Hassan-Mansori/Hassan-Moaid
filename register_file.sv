@@ -33,16 +33,16 @@ module register_file #(parameter REGF_WIDTH = 16)(
     
     logic [REGF_WIDTH-1 :0] registers [3:0];
     
-    initial $readmemb("/home/nsh1/Downloads/CX-204-Lab1/support_files/fib_rf.mem", registers);
+    initial $readmemb("/home/it/Desktop/Courses/MCA/Hassan-Moaid/CX-204-Lab1/support_files/fib_rf.mem", registers);
     
     always@ (posedge clk, negedge reset) begin
-        if (!reset) begin
-            registers[0] <= 0;
-            registers[1] <= 0;
-            registers[2] <= 0;
-            registers[3] <= 0;
-    end
-        else if (write == 2'b01)
+//        if (!reset) begin
+//            registers[0] <= 0;
+//            registers[1] <= 0;
+//            registers[2] <= 0;
+//            registers[3] <= 0;
+//    end
+        if (write == 2'b01)
             registers[1] <= Data;
         else if (write == 2'b10)
             registers[2] <= Data;
