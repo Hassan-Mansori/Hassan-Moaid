@@ -1,0 +1,19 @@
+
+.data
+nt: .asciiz "not-EquAL\N"
+ny:  .asciiz "EquAL\N"
+
+
+
+.text 
+main:
+li t0, 10
+li t1, 10
+beq t0, t1, if
+la a1,nt
+li a0, 4
+ecall 
+if:
+la a1, ny
+ li a0, 4
+ ecall
