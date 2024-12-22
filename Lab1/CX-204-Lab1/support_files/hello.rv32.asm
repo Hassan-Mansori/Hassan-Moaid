@@ -7,7 +7,11 @@
 	.section	.rodata
 	.align	2
 .LC0:
+<<<<<<< HEAD:Lab1/CX-204-Lab1/support_files/hello.rv32.asm
 	.string	"<Hassan_MANSORI>"
+=======
+	.string	"<Your-Name>"
+>>>>>>> refs/remotes/origin/main:CX-204-Lab1/support_files/hello.rv32.asm
 	.text
 	.align	2
 	.globl	main

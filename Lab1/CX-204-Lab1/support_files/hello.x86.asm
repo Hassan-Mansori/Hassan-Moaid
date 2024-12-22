@@ -2,7 +2,11 @@
 	.text
 	.section	.rodata
 .LC0:
+<<<<<<< HEAD:Lab1/CX-204-Lab1/support_files/hello.x86.asm
 	.string	"<Hassan_MANSORI>"
+=======
+	.string	"<Your-Name>"
+>>>>>>> refs/remotes/origin/main:CX-204-Lab1/support_files/hello.x86.asm
 	.text
 	.globl	main
 	.type	main, @function
@@ -26,7 +30,11 @@ main:
 	.cfi_endproc
 .LFE0:
 	.size	main, .-main
+<<<<<<< HEAD:Lab1/CX-204-Lab1/support_files/hello.x86.asm
 	.ident	"GCC: (Ubuntu 13.2.0-23ubuntu4) 13.2.0"
+=======
+	.ident	"GCC: (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0"
+>>>>>>> refs/remotes/origin/main:CX-204-Lab1/support_files/hello.x86.asm
 	.section	.note.GNU-stack,"",@progbits
 	.section	.note.gnu.property,"a"
 	.align 8
