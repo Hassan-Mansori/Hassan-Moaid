@@ -1,0 +1,39 @@
+.data
+space: .string " "
+star: .string "*"
+newline: .string"\n"
+end: .string "End"
+.text
+
+_start:
+addi x5,x0,5
+addi x7,x0,1
+addi x28,x0,1
+addi x30,x0,1
+sub x9,x5,x28
+loop1:
+
+addi x29,x0,0
+addi x6,x0,0
+loop2:
+la a1, space
+li a0, 4
+ecall
+addi x6,x6,1
+bne x9,x6 loop2
+sub x9,x9,x28
+loop3:
+la a1, star
+li a0, 4
+ecall
+addi x29,x29,1 
+bne x29,x7 loop3
+addi x7,x7,2
+la a1, newline
+li a0, 4
+ecall
+addi x30,x30,1
+bne x5,x30,loop1
+la a1, end
+li a0, 4
+ecall
