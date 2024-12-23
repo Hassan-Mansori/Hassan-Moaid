@@ -1,0 +1,59 @@
+.data
+array: .word 5,2,8,4,9,6,7,3,1
+
+.text
+
+main:
+la a0, array 
+li a1, 9
+jal printArray
+li a0,10
+ecall
+
+printArray:
+addi sp, sp, -16 
+sw ra, 12(sp)
+sw s0, 8(sp)
+sw s1, 4(sp) 
+mv s0, a0 
+mv s1, a1 
+li t0, 0 # i = 0
+li t4, 1 # use for sub
+li t6, 0 # use for print
+addi t3,x0, 0 #temp
+#sub s1,s1,t4 #n-1
+
+i_loop:
+addi t0, t0, 1
+li t5, 0 #j = 0
+sub t3,s1,t0
+bge t0, s1, print_loop
+
+j_loop:
+beq t5,t3,i_loop
+slli t1, t5, 2 #j*4
+add t2, s0, t1 #get address of array
+lw a1, 0(t2) #get array[j]
+lw a2, 4(t2) #get array[j+1]
+addi t5,t5,1
+bge a2,a1,j_loop
+sw a2, 0(t2)
+sw a1, 4(t2) 
+j j_loop 
+
+print_loop:
+bge t6, s1, end_loop # If i >= size, exit loop
+slli t1, t6, 2 # t1 = i * 4 (word size)
+add t2, s0, t1 # t2 = address of arr[i]
+lw a1, 0(t2) # Load arr[i] into a1
+li a0, 1 # Load 1 into a0 to print it
+ecall # Print arr[i]
+addi t6, t6, 1 # i++
+j print_loop # Repeat loop
+
+end_loop:
+lw ra, 12(sp) 
+lw s0, 8(sp)
+lw s1, 4(sp) 
+addi sp, sp, 16 
+jr ra 
